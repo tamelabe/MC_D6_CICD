@@ -6,9 +6,9 @@ RET = 0
 DIFF_RES=""
 echo "" > log.txt
 
-for var in -v -c -n -h -l
+for var in -v -c -n -h
 do
-  for var2 in -v -c -n -h -l
+  for var2 in -v -c -n -h
   do
     if [ $var != $var2 ]
     then
@@ -99,8 +99,8 @@ echo "FAIL: $COUNTER_FAIL"
 
 if [ $COUNTER_FAIL != 0 ]
   then
-    echo "TEST STAGE FAILED!"
+    echo "INTEGRATION TESTS FAILED!"
     exit 1
   else
-    echo "TEST STAGE PASSED!"
+    echo "INTEGRATION TESTS PASSED!"
 fi
