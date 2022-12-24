@@ -95,7 +95,7 @@ do
 done
 
 echo "SUCCESS: $COUNTER_SUCCESS"
-echo "FAIL: $COUNTER_FAIL"
+echo "FAIL: $COUNTER_FAIL \nTEST STAGE FAILED!"
 
 if [ $COUNTER_FAIL != 0 ]
   then
