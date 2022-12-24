@@ -102,5 +102,5 @@ if [ $COUNTER_FAIL != 0 ]
     echo "INTEGRATION TESTS FAILED!"
     exit 1
   else
-    echo "INTEGRATION TESTS PASSED!"
+    echo "INTEGRATION TESTS PASSED! "
 fi
