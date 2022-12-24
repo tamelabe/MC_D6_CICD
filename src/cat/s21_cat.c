@@ -21,8 +21,6 @@ int s21_cat(int argc, char *argv[]) {
       } else {
         print(fp, options);
         fclose(fp);
-
-        
       }
     }
   } else {
