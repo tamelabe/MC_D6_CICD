@@ -19,3 +19,6 @@ test: s21_grep
 clean:
 	rm -rf s21_grep
 	rm -rf log.txt
+
+check:
+	clang-format -n --Werror ./*.c ./*.h

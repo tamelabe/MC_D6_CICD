@@ -17,3 +17,11 @@ making:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
+
+checking:
+  stage: style
+  script:
+    - cd src/cat/
+    - make check
+    - cd ../grep/
+    - make check

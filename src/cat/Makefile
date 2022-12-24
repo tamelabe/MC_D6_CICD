@@ -18,9 +18,7 @@ leaks: s21_cat
 	@leaks --atExit -- ./s21_cat -benst test_file/all_flag_tests/*
 
 style: s21_cat
-	@cp ../../materials/linters/CPPLINT.cfg ./
-	@python3 ./../../materials/linters/cpplint.py --extensions=c s21_cat.c s21_cat.h
-	@rm -f CPPLINT.cfg
+	clang-format -n --Werror ./*.c ./*.h
 
 check: style
 
