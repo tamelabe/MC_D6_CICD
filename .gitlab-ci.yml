@@ -4,6 +4,7 @@ default:
 stages:
   - build
   - style
+  - test
 
 making:
   stage: build
@@ -25,4 +26,12 @@ checking:
     - make check
     - cd ../grep/
     - make check
+
+testing:
+  stage: test
+  script:
+    - cd src/cat/
+    - make test
+    - cd ../grep/
+    - make test
   when: on_success
