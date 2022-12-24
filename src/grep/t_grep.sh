@@ -94,12 +94,13 @@ do
   done
 done
 
-echo "SUCCESS: $COUNTER_SUCCESS
-      TEST STAGE PASSED!"
-echo "FAIL: $COUNTER_FAIL
-      TEST STAGE FAILED!"
+echo "SUCCESS: $COUNTER_SUCCESS"
+echo "FAIL: $COUNTER_FAIL"
 
 if [ $COUNTER_FAIL != 0 ]
   then
+    echo "TEST STAGE FAILED!"
     exit 1
+  else
+    echo "TEST STAGE PASSED!"
 fi
