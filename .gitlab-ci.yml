@@ -25,3 +25,4 @@ checking:
     - make check
     - cd ../grep/
     - make check
+  when: on_success
