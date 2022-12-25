@@ -6,9 +6,9 @@ RET = 0
 DIFF_RES=""
 echo "" > log.txt
 
-for var in -v -c -n -h -l
+for var in -v -c -n -h
 do
-  for var2 in -v -c -n -h -l
+  for var2 in -v -c -n -h
   do
     if [ $var != $var2 ]
     then
