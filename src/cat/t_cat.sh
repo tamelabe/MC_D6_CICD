@@ -3,6 +3,7 @@
 COUNTER_SUCCESS=0
 COUNTER_FAIL=0
 DIFF_RES=""
+RET = 0
 # TEST_FILE="bytes.txt"
 TEST_FILE="bytes.txt"
 echo "" > log.txt
@@ -104,5 +105,13 @@ do
   done
 done
 
-echo "SUCCESS: $COUNTER_SUCCESS"
-echo "FAIL: $COUNTER_FAIL"
+echo "SUCCESS: $COUNTER_SUCCESS \nTEST STAGE PASSED!"
+echo "FAIL: $COUNTER_FAIL \nTEST STAGE FAILED!"
+
+if [ $COUNTER_FAIL != 0 ]
+  then
+    echo "INTEGRATION TESTS FAILED!"
+    exit 1
+  else
+    echo "INTEGRATION TESTS PASSED!"
+fi
