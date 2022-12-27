@@ -22,8 +22,6 @@ making:
 
 checking:
   stage: style
-  dependencies: 
-    - build
   script:
     - cd src/cat/
     - make check
@@ -39,7 +37,9 @@ testing:
     - make test
 
 deploy:
-  stage: deploy
+  stage: making
+  dependencies:
+    - build
   when: manual
   script:
     - bash ./src/cd_script.sh
