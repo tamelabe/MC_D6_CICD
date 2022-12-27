@@ -4,7 +4,8 @@ default:
 stages:
   - build
   - style
-  - test
+  - tests
+  - deploy
 
 making:
   stage: build
@@ -28,10 +29,15 @@ checking:
     - make check
 
 testing:
-  stage: test
+  stage: tests
   script:
     - cd src/cat/
     - make test
     - cd ../grep/
     - make test
-  when: on_success
+
+deploy:
+  stage: deploy
+  when: manual
+  script:
+    - bash ./src/cd_script.sh
