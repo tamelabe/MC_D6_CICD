@@ -37,9 +37,9 @@ testing:
     - make test
 
 deploy:
-  stage: making
+  stage: deploy
   dependencies:
-    - build
+    - making
   when: manual
   script:
     - bash ./src/cd_script.sh
