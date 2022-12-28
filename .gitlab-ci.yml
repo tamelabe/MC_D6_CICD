@@ -48,8 +48,9 @@ deploy:
   when: manual
   script:
     - bash ./src/cd_script.sh
+    - bash ./src/tg_bot_notify.sh 
 
-cd_notify:
-  stage: deploy
-  script:
-    - bash ./src/tg_bot_notify.sh 2
+# cd_notify:
+#   stage: deploy
+#   script:
+#     - bash ./src/tg_bot_notify.sh 2

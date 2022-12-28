@@ -10,6 +10,7 @@ CD="    Failed  ❌"
 
 if [[ $1 -eq 1 ]]; then
     CI="     Passed  ✅"
+    CD="    Not started yet..."
 elif [[ $1 -eq 2 ]]; then
     CI="     Passed  ✅"
     CD="    Passed  ✅"
