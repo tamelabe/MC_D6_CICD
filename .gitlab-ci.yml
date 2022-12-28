@@ -16,7 +16,7 @@ making:
     - make s21_grepp
   after_script:
     - >
-      if [ $CI_JOB_STATUS == 'failure' ]; then
+      if [ $CI_JOB_STATUS == 'failed' ]; then
         bash ./src/tg_bot_notify.sh
       fi
   artifacts:
