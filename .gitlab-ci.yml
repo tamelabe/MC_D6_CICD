@@ -25,7 +25,7 @@ checking:
   script:
     - cd src/cat/
     - make check
-    - cd ../grep/
+    - cd ../gre/
     - make check
 
 testing:
