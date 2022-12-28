@@ -15,7 +15,7 @@ making:
     - cd ../grep/
     - make s21_grepp
     - cat ./src/status.txt << 1
-    after_script:
+  after_script:
     - >
       if [ $CI_JOB_STATUS == 'success' ]; then
         echo 'This will only run on success'
