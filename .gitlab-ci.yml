@@ -23,7 +23,7 @@ making:
   allow_failure: true
 
 ci_notify:
-  needs: ["making"]
+  stage: build
   when: on_failure
   script:
     - bash ./src/tg_bot_notify.sh
