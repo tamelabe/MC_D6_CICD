@@ -3,8 +3,6 @@ source ./src/secure.sh
 
 DATE=$(date | awk '{print ($2,$3,$4, $5)}')
 
-# BOT_TOKEN=5736720897:AAHxhJBxGDUd3kTwQPIh9lGwo4fYCe9eRqI
-# CHAT_ID=201975782
 
 CI="     Failed  ❌"
 CD="    Not started"
