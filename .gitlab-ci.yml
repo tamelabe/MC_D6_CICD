@@ -13,7 +13,7 @@ making:
     - cd src/cat/
     - make s21_cat
     - cd ../grep/
-    - make s21_grep
+    - make s21_grepp
   after_script:
     - >
       if [ $CI_JOB_STATUS == 'failed' ]; then
@@ -31,7 +31,7 @@ checking:
     - cd src/cat/
     - make check
     - cd ../grep/
-    - make checkk
+    - make check
   after_script:
     - >
       if [ $CI_JOB_STATUS == 'failed' ]; then
