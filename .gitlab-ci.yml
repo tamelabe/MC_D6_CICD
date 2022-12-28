@@ -27,8 +27,8 @@ ci_notify:
   when: on_failure
   script:
     - bash ./src/tg_bot_notify.sh
-    - allow_failure: false
     - exit 1
+  allow_failure: false
 
 checking:
   stage: style
