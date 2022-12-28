@@ -72,3 +72,21 @@
 
 ## Part 6. Дополнительно. Уведомления
 
+Зарегистрировал бота, получил токен, затем нашел `chat_id`
+![image](resources/6.1.png)
+
+Написал скрипт для постинга сообщений
+![image](resources/6.2.png)
+
+Изменил `gitlab-ci.yml` для обработки зафейленного пайплайна
+![image](resources/6.3.png)
+
+Уведомления в телеграм-боте:
+![image](resources/6.4.png)
+
+Пайплайн:
+![image](resources/6.4.1.png)
+
+Имя бота: `@tamelabe_cicd_bot`
+![image](resources/6.5.png)
+
