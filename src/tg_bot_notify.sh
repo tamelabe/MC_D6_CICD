@@ -6,7 +6,7 @@ BOT_TOKEN=5736720897:AAHxhJBxGDUd3kTwQPIh9lGwo4fYCe9eRqI
 CHAT_ID=201975782
 
 CI="     Failed  ❌"
-CD="    Failed  ❌"
+CD="    Not started"
 
 if [[ $1 -eq 1 ]]; then
     CI="     Passed  ✅"
@@ -14,6 +14,9 @@ if [[ $1 -eq 1 ]]; then
 elif [[ $1 -eq 2 ]]; then
     CI="     Passed  ✅"
     CD="    Passed  ✅"
+elif [[ $1 -eq 3 ]]; then
+    CI="     Passed  ✅"
+    CD="    Failed  ❌"
 fi
 
 TEXT="Date: $DATE%0ACI Status:$CI%0ACD Status:$CD"

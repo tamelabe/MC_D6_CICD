@@ -17,21 +17,13 @@ making:
   after_script:
     - >
       if [ $CI_JOB_STATUS == 'failed' ]; then
-        bash ./src/tg_bot_notify.sh
+        bash ./src/tg_bot_notify.sh 0
       fi
   artifacts:
     paths:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
-
-# ci_notify:
-#   stage: build
-#   when: on_failure
-#   script:
-#     - bash ./src/tg_bot_notify.sh
-#     - exit 1
-#   allow_failure: false
 
 checking:
   stage: style
@@ -40,7 +32,11 @@ checking:
     - make check
     - cd ../grep/
     - make check
-    - ./src/status.txt << 2
+  after_script:
+    - >
+      if [ $CI_JOB_STATUS == 'failed' ]; then
+        bash ./src/tg_bot_notify.sh 0
+      fi
 
 testing:
   stage: tests
@@ -49,12 +45,12 @@ testing:
     - make test
     - cd ../grep/
     - make test
-    - ./src/status.txt << 3
-    
-# ci_notify:
-#   stage: tests
-#   script:
-#     - bash ./src/tg_bot_notify.sh 1
+    - bash ./src/tg_bot_notify.sh 1
+  after_script:
+    - >
+      if [ $CI_JOB_STATUS == 'failed' ]; then
+        bash ./src/tg_bot_notify.sh 0
+      fi
 
 deploy:
   stage: deploy
@@ -63,11 +59,9 @@ deploy:
   when: manual
   script:
     - bash ./src/cd_script.sh
-    - ./src/status.txt << 4
-    # - bash ./src/tg_bot_notify.sh
-    - src/status.txt << 0
-
-
-#   stage: deploy
-#   script:
-#     - bash ./src/tg_bot_notify.sh 2
+    - bash ./src/tg_bot_notify.sh 1
+  after_script:
+    - >
+      if [ $CI_JOB_STATUS == 'failed' ]; then
+        bash ./src/tg_bot_notify.sh 3
+      fi
