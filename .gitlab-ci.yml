@@ -35,6 +35,9 @@ testing:
     - make test
     - cd ../grep/
     - make test
+    when: on_success
+    script:
+      - bash ./src/tg_bot_notify 1
 
 deploy:
   stage: deploy
@@ -43,3 +46,6 @@ deploy:
   when: manual
   script:
     - bash ./src/cd_script.sh
+  when: on_success
+    script:
+      - bash ./src/tg_bot_notify 2
