@@ -14,14 +14,13 @@ making:
     - make s21_cat
     - cd ../grep/
     - make s21_grep
-    - src/status.txt << 1
+    - ./src/status.txt << 1
   artifacts:
     paths:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
-  when: on_failure
-  script:
+  on_failure_script:
     - echo "FAILED!!!!"
 
 checking:
