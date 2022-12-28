@@ -65,3 +65,4 @@ deploy:
       if [ $CI_JOB_STATUS == 'failed' ]; then
         bash ./src/tg_bot_notify.sh 3
       fi
+  allow_failure: false
