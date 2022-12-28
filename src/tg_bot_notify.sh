@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./src/secure.sh
+source ./secure.sh
 
 DATE=$(date | awk '{print ($2,$3,$4, $5)}')
 
