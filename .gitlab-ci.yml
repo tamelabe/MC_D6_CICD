@@ -45,7 +45,7 @@ testing:
     - make test
     - cd ../grep/
     - make test
-    - bash ./src/tg_bot_notify.sh 1
+    - bash ../tg_bot_notify.sh 1
   after_script:
     - >
       if [ $CI_JOB_STATUS == 'failed' ]; then
