@@ -15,17 +15,20 @@ making:
     - cd ../grep/
     - make s21_grepp
     - cat ./src/status.txt << 1
+    when: on_success
+    - bash ./src/tg_bot_notify.sh 0
+    when: on_failure
   artifacts:
     paths:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
 
-ci_notify:
-  stage: build
-  script:
-    - bash ./src/tg_bot_notify.sh 0
-  when: on_failure
+# ci_notify:
+#   stage: build
+#   script:
+#     - bash ./src/tg_bot_notify.sh 0
+#   when: on_failure
 
 checking:
   stage: style
