@@ -58,7 +58,7 @@ deploy:
     - making
   when: manual
   script:
-    - bash ./src/cd_script.ssh
+    - bash ./src/cd_script.sh
     - bash ./src/tg_bot_notify.sh 2
   after_script:
     - >
