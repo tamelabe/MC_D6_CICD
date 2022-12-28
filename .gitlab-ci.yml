@@ -39,7 +39,7 @@ testing:
 ci_notify:
   stage: tests
   script:
-    - bash ./src/tg_bot_notify 1
+    - bash ./src/tg_bot_notify.sh 1
 
 deploy:
   stage: deploy
@@ -52,4 +52,4 @@ deploy:
 cd_notify:
   stage: deploy
   script:
-    - bash ./src/tg_bot_notify 2
+    - bash ./src/tg_bot_notify.sh 2
