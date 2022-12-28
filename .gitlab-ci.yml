@@ -14,19 +14,24 @@ making:
     - make s21_cat
     - cd ../grep/
     - make s21_grep
+    - src/status.txt << 1
   artifacts:
     paths:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
+  when: on_failure
+  script:
+    - echo "FAILED!!!!"
 
 checking:
   stage: style
   script:
     - cd src/cat/
     - make check
-    - cd ../gre/
+    - cd ../grep/
     - make check
+    - src/status.txt << 2
 
 testing:
   stage: tests
@@ -35,11 +40,12 @@ testing:
     - make test
     - cd ../grep/
     - make test
+    - src/status.txt << 3
     
-ci_notify:
-  stage: tests
-  script:
-    - bash ./src/tg_bot_notify.sh 1
+# ci_notify:
+#   stage: tests
+#   script:
+#     - bash ./src/tg_bot_notify.sh 1
 
 deploy:
   stage: deploy
@@ -48,7 +54,9 @@ deploy:
   when: manual
   script:
     - bash ./src/cd_script.sh
-    - bash ./src/tg_bot_notify.sh 2
+    - src/status.txt << 3
+    # - bash ./src/tg_bot_notify.sh
+    - src/status.txt << 0
 
 # cd_notify:
 #   stage: deploy
