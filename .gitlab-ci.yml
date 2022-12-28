@@ -31,7 +31,7 @@ checking:
     - cd src/cat/
     - make check
     - cd ../grep/
-    - make check
+    - make checkk
   after_script:
     - >
       if [ $CI_JOB_STATUS == 'failed' ]; then
@@ -44,7 +44,7 @@ testing:
     - cd src/cat/
     - make test
     - cd ../grep/
-    - make tesst
+    - make test
     - bash ../tg_bot_notify.sh 1
   after_script:
     - >
