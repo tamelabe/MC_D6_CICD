@@ -14,13 +14,12 @@ making:
     - make s21_cat
     - cd ../grep/
     - make s21_grepp
-    - ./src/status.txt << 1
+    - cat ./src/status.txt << 1
   artifacts:
     paths:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
-  allow_failure: true
 
 ci_notify:
   stage: build
