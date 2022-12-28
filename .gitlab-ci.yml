@@ -21,13 +21,6 @@ making:
       - src/grep/s21_grep
     expire_in: 30 days
 
-ci_notify:
-  needs: ["making"]
-  when: on_failure
-  stage: build
-  script:
-    - bash ./src/tg_bot_notify.sh
-
 checking:
   stage: style
   script:
@@ -62,6 +55,12 @@ deploy:
     # - bash ./src/tg_bot_notify.sh
     - src/status.txt << 0
 
+ci_notify:
+  needs: ["making"]
+  when: on_failure
+  stage: build
+  script:
+    - bash ./src/tg_bot_notify.sh
 
 #   stage: deploy
 #   script:
