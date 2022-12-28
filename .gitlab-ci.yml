@@ -14,13 +14,10 @@ making:
     - make s21_cat
     - cd ../grep/
     - make s21_grepp
-    - cat ./src/status.txt << 1
   after_script:
     - >
-      if [ $CI_JOB_STATUS == 'success' ]; then
-        echo 'This will only run on success'
-      else
-        echo 'This will only run when job failed or is cancelled'
+      if [ $CI_JOB_STATUS == 'failure' ]; then
+        bash ./src/tg_bot_notify.sh
       fi
   artifacts:
     paths:
