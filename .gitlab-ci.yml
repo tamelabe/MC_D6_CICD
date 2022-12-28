@@ -44,7 +44,7 @@ testing:
     - cd src/cat/
     - make test
     - cd ../grep/
-    - make test
+    - make tesst
     - bash ../tg_bot_notify.sh 1
   after_script:
     - >
